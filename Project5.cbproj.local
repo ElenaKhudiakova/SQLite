@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.406,=D:\Translate\lab4\shell.c</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.111,C:\Users\Dima\Documents\Embarcadero\Studio\Projects\Unit2.h=D:\Translate\lab4\Unit2.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.502,C:\Users\Dima\Documents\Embarcadero\Studio\Projects\Project5.cbproj=D:\Translate\lab4\Project5.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.111,C:\Users\Dima\Documents\Embarcadero\Studio\Projects\Unit2.dfm=D:\Translate\lab4\Unit2.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.877,=D:\Translate\lab4\sqlite3ext.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.868,=D:\Translate\lab4\sqlite3.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.111,C:\Users\Dima\Documents\Embarcadero\Studio\Projects\Unit2.cpp=D:\Translate\lab4\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.818,=C:\Users\Dima\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.840,=D:\Translate\lab4\sqlite3.c</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.775,=C:\Users\Dima\Documents\Embarcadero\Studio\Projects\Project5PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.633,C:\Users\Dima\Documents\Embarcadero\Studio\Projects\Project5PCH1.h=D:\Translate\lab4\Project5PCH1.h</Transaction>
+    <Transaction>2022.04.12 14:14:37.885,D:\Translate\lab4\shell.c=</Transaction>
+    <Transaction>2022.04.12 14:14:37.901,D:\Translate\lab4\sqlite3.c=</Transaction>
+    <Transaction>2022.04.12 14:14:37.903,D:\Translate\lab4\sqlite3.h=</Transaction>
+    <Transaction>2022.04.12 14:14:37.905,D:\Translate\lab4\sqlite3ext.h=</Transaction>
+    <Transaction>2022.04.12 14:15:03.152,=D:\Translate\lab4\sqlite3.c</Transaction>
+    <Transaction>2022.04.12 14:15:03.174,=D:\Translate\lab4\sqlite3.h</Transaction>
+    <Transaction>2022.04.12 14:27:21.314,=D:\Translate\lab4\DataBase\Test2.db</Transaction>
+  </Transactions>
+</BorlandProject>
