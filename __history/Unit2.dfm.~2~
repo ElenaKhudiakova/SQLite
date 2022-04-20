@@ -1,0 +1,49 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 411
+  ClientWidth = 852
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object VirtualStringTree1: TVirtualStringTree
+    Left = 64
+    Top = 48
+    Width = 336
+    Height = 188
+    Header.AutoSizeIndex = 0
+    Header.Options = [hoColumnResize, hoDrag, hoShowSortGlyphs, hoVisible]
+    TabOrder = 0
+    Touch.InteractiveGestures = [igPan, igPressAndTap]
+    Touch.InteractiveGestureOptions = [igoPanSingleFingerHorizontal, igoPanSingleFingerVertical, igoPanInertia, igoPanGutter, igoParentPassthrough]
+    Columns = <
+      item
+        Position = 0
+        Text = #1048#1076#1077#1085#1090#1080#1092#1080#1082#1072#1090#1086#1088
+        Width = 80
+      end
+      item
+        Position = 1
+        Width = 75
+      end
+      item
+        Position = 2
+        Width = 88
+      end>
+  end
+  object Button1: TButton
+    Left = 464
+    Top = 48
+    Width = 65
+    Height = 57
+    Caption = 'Button1'
+    TabOrder = 1
+  end
+end

@@ -1,0 +1,108 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Unit2.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma link "VirtualTrees"
+#pragma resource "*.dfm"
+
+#include "sqlite3.h"
+
+TForm2 *Form2;
+//---------------------------------------------------------------------------
+__fastcall TForm2::TForm2(TComponent* Owner)
+	: TForm(Owner)
+{
+	VirtualStringTree1->NodeDataSize = sizeof(TreeNodeStruct);
+
+	sqlite3* DataBase;
+
+	//Открытие БД
+	int openResult = sqlite3_open16(L"D:\\Загрузки\\OneDrive\\ИБТС\\ЛР4\\ProjectBD\\DataBase\\Test2.db", &DataBase);
+	const char *errmsg;
+	sqlite3_stmt *pStatement;
+
+	//Подготовка запроса
+	int result = sqlite3_prepare16_v2(DataBase, L"CREATE TABLE main.test(col INTEGER, col2 INTEGER);", -1, &pStatement, NULL);
+	if( result != SQLITE_OK)
+	{
+		errmsg = sqlite3_errmsg(DataBase);
+	}
+	else
+	{
+		errmsg = "DONE";
+	};
+
+	//Выполнение запроса
+	result = sqlite3_step(pStatement);
+	if (result != SQLITE_DONE)
+	{
+		int n = sqlite3_column_int(pStatement,0);
+
+	}
+
+	sqlite3_finalize(pStatement);
+
+	Label3->Caption = errmsg;
+	Label4->Caption = result;
+
+	sqlite3_close(DataBase);
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm2::Button1Click(TObject *Sender)
+{
+	VirtualStringTree1->Clear();
+	VirtualStringTree1->BeginUpdate();
+
+	for (int  i = 0; i < 100;i++)
+	{
+		PVirtualNode entryNode = VirtualStringTree1->AddChild(VirtualStringTree1->RootNode);
+		TreeNodeStruct *nodeData = (TreeNodeStruct*)VirtualStringTree1->GetNodeData(entryNode);
+		nodeData->Id = i;
+		nodeData->FileName = u"Файл номер ";
+		nodeData->FileName += UnicodeString(i);
+	};
+
+	VirtualStringTree1->EndUpdate();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm2::VirtualStringTree1GetText(TBaseVirtualTree *Sender, PVirtualNode Node,
+          TColumnIndex Column, TVSTTextType TextType, UnicodeString &CellText)
+
+{
+	if(!Node)return;
+	TreeNodeStruct *nodeData = (TreeNodeStruct*)VirtualStringTree1->GetNodeData(Node);
+	switch(Column)
+	{
+		case 0:
+		{
+			CellText = UnicodeString(nodeData->Id); break;
+		}
+		case 1:
+		{
+			CellText = UnicodeString(nodeData->FileName); break;
+		}
+	};
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm2::VirtualStringTree1AddToSelection(TBaseVirtualTree *Sender,
+          PVirtualNode Node)
+{
+	TreeNodeStruct *nodeData = (TreeNodeStruct*)VirtualStringTree1->GetNodeData(Node);
+	Label2->Caption = nodeData->Id;
+
+	PVirtualNode selectedNode = VirtualStringTree1->FocusedNode;
+	unsigned int selectedNodeIndex = selectedNode->Index;
+
+	VirtualStringTree1->DeleteNode(selectedNode);
+
+	if (!selectedNode){
+	//работа
+	};
+}
+//---------------------------------------------------------------------------
+
